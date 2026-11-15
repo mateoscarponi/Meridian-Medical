@@ -106,7 +106,7 @@ export const AUTH_CASES: AuthCase[] = [
     cpt: "22551",
     service: "ACDF, single interspace C5-C6 (with 22853 interbody device, 22845 anterior instrumentation)",
     icd10: ["M50.122"],
-    provider: "Dr. Adrian Mateo, DO",
+    provider: "Dr. Adrian Hale, DO",
     receivedDaysAgo: 3,
     urgency: "standard",
     pathway: "Payer portal / X12 278",
@@ -146,7 +146,7 @@ export const AUTH_CASES: AuthCase[] = [
     cpt: "63047",
     service: "Lumbar laminectomy / decompression, single segment L4-L5",
     icd10: ["M48.062"],
-    provider: "Dr. Adrian Mateo, DO",
+    provider: "Dr. Adrian Hale, DO",
     receivedDaysAgo: 1,
     urgency: "standard",
     pathway: "Da Vinci PAS (FHIR)",
@@ -258,7 +258,7 @@ Patient: ${c.patient}   Payer: ${c.payer}   Dx: ${c.icd10.join(", ")}
 
 To the Utilization Review Department,
 
-I am requesting authorization for the following service: ${c.service} (CPT ${c.cpt}) for the patient above, who is under my care at Mateo Orthopedic & Spine Care.
+I am requesting authorization for the following service: ${c.service} (CPT ${c.cpt}) for the patient above, who is under my care at Meridian Orthopedics & Spine Care.
 
 Clinical summary:
 ${met.map((r) => `• ${r.label}: ${r.evidence.replace(/^“|”$/g, "")}`).join("\n")}

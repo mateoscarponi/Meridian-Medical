@@ -120,7 +120,7 @@ export function capabilityStatement(): Json {
     kind: "instance",
     fhirVersion: "4.0.1",
     format: ["application/fhir+json"],
-    implementation: { description: "Mateo Orthopedic & Spine — demo FHIR facade (synthetic data)" },
+    implementation: { description: "Meridian Orthopedics & Spine — demo FHIR facade (synthetic data)" },
     rest: [
       {
         mode: "server",

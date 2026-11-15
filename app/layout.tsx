@@ -8,8 +8,8 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono-face", 
 
 export const metadata: Metadata = {
   title: {
-    default: "Mateo Orthopedic & Spine Care — Demo",
-    template: "%s · Mateo Orthopedic & Spine (Demo)",
+    default: "Meridian Orthopedics & Spine Care — Demo",
+    template: "%s · Meridian Orthopedics & Spine (Demo)",
   },
   description:
     "Concept demo of an orthopedic & spine practice website paired with an AI-driven care operations platform: prior authorization, document AI, claims, scheduling, interoperability (HL7 / FHIR) and more.",

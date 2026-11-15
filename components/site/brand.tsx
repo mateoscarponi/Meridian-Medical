@@ -18,11 +18,11 @@ export function Monogram({ className, light = false }: { className?: string; lig
 
 export function Logo({ light = false, compact = false }: { light?: boolean; compact?: boolean }) {
   return (
-    <Link href="/" className="group flex items-center gap-3" aria-label="Mateo Orthopedic & Spine Care, home">
+    <Link href="/" className="group flex items-center gap-3" aria-label="Meridian Orthopedics & Spine Care, home">
       <Monogram light={light} className="size-10 text-[17px] transition-transform duration-300 group-hover:-rotate-3" />
       {!compact && (
         <span className="leading-tight">
-          <span className={cx("block font-display text-[17px] font-semibold", light ? "text-white" : "text-ink")}>Mateo Orthopedic</span>
+          <span className={cx("block font-display text-[17px] font-semibold", light ? "text-white" : "text-ink")}>Meridian Orthopedics</span>
           <span className={cx("block text-[11px] font-semibold uppercase tracking-[0.18em]", light ? "text-white/60" : "text-muted")}>&amp; Spine Care</span>
         </span>
       )}

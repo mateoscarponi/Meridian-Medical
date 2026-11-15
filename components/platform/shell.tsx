@@ -111,7 +111,7 @@ export function PlatformShell({ children }: { children: ReactNode }) {
         <Link href="/" className="flex items-center gap-2.5 px-3">
           <Monogram light className="size-9 text-[15px]" />
           <span className="leading-tight">
-            <span className="block font-display text-[15px] font-semibold text-white">Mateo Orthopedic</span>
+            <span className="block font-display text-[15px] font-semibold text-white">Meridian Orthopedics</span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">Care Operations</span>
           </span>
         </Link>
@@ -130,7 +130,7 @@ export function PlatformShell({ children }: { children: ReactNode }) {
           <div className="absolute inset-0 bg-ink/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
           <div className="scroll-thin absolute inset-y-0 left-0 w-72 overflow-y-auto bg-ink px-3 py-5">
             <div className="mb-6 flex items-center justify-between px-3">
-              <span className="font-display text-[15px] font-semibold text-white">Mateo Orthopedic</span>
+              <span className="font-display text-[15px] font-semibold text-white">Meridian Orthopedics</span>
               <button onClick={() => setOpen(false)} className="text-white/70" aria-label="Close navigation"><X className="size-5" /></button>
             </div>
             <NavList onNavigate={() => setOpen(false)} />

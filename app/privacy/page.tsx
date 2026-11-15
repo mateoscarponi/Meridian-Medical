@@ -90,7 +90,7 @@ export default function PrivacyPage() {
               <div className="text-[15px] font-semibold">Privacy Officer</div>
               <div className="mt-1 text-[13.5px] text-white/70">Questions, requests or complaints about your health information.</div>
             </div>
-            <div className="flex items-center gap-2 text-[14px] font-semibold"><Mail className="size-4 text-gold-2" /> privacy@mateo-ortho.example · (516) 555-0148</div>
+            <div className="flex items-center gap-2 text-[14px] font-semibold"><Mail className="size-4 text-gold-2" /> privacy@meridian-ortho.example · (516) 555-0148</div>
           </div>
         </section>
       </main>

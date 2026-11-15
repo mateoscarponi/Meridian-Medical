@@ -24,7 +24,7 @@ const ROWS: Row[] = [
   { time: "3:45", patient: "Linda Chen", payer: "Humana Medicare Advantage", memberId: "H5619-0042", visit: "Follow-up", result: "active", copay: "$25 specialist", deductible: "n/a", flags: ["ESI auth HUM-AUTH-8841207 valid to 02/14/2027"] },
 ];
 
-const SAMPLE_271 = `ISA*00*          *00*          *ZZ*CLEARINGHOUSE  *ZZ*MATEOORTHO     *261116*0612*^*00501*000004117*0*P*:~
+const SAMPLE_271 = `ISA*00*          *00*          *ZZ*CLEARINGHOUSE  *ZZ*MERIDIANORTHO  *261116*0612*^*00501*000004117*0*P*:~
 ST*271*0001*005010X279A1~
 BHT*0022*11*ELG-0011730*20261116*0612~
 NM1*PR*2*OXFORD HEALTH PLANS*****PI*06111~

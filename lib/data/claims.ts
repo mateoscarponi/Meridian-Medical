@@ -203,7 +203,7 @@ export const CLAIMS: Claim[] = [
     lines: [{ cpt: "62321", desc: "Interlaminar ESI cervical/thoracic w/ imaging", modifiers: [], units: 1, icd10: ["M54.12"], charge: 980 }],
   },
   {
-    id: "CLM-90436", patient: "Priya Natarajan", payer: "Cigna Open Access", payerType: "Commercial", dos: "11/12/2026", daysSinceDos: 4, provider: "Dr. Mateo",
+    id: "CLM-90436", patient: "Priya Natarajan", payer: "Cigna Open Access", payerType: "Commercial", dos: "11/12/2026", daysSinceDos: 4, provider: "Dr. Hale",
     lines: [
       { cpt: "99204", desc: "Office visit, new patient, moderate MDM", modifiers: [], units: 1, icd10: ["M41.26"], charge: 340 },
       { cpt: "72082", desc: "X-ray entire spine, 2-3 views (scoliosis)", modifiers: [], units: 1, icd10: ["M41.26"], charge: 210 },

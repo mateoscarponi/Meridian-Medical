@@ -3,8 +3,8 @@
 // street details are fictional so the demo can never be mistaken for a real office.
 
 export const PRACTICE = {
-  name: "Mateo Orthopedic & Spine Care",
-  short: "Mateo Orthopedic & Spine",
+  name: "Meridian Orthopedics & Spine Care",
+  short: "Meridian Orthopedics & Spine",
   tagline: "Our Patients. Our Purpose. Our Passion.",
   phone: "(516) 555-0148",
   since: 2018,
@@ -62,10 +62,10 @@ export const CARE_PATH = [
 
 export const TEAM = [
   {
-    name: "Dr. Adrian Mateo, DO",
+    name: "Dr. Adrian Hale, DO",
     role: "Orthopedic Spine Surgeon · Director",
     detail: "Fellowship-trained in complex spine & deformity. Faculty, orthopedic residency program.",
-    initials: "AM",
+    initials: "AH",
   },
   {
     name: "Dr. Elena Ruiz, MD",

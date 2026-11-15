@@ -17,7 +17,7 @@ In PLAN, list orders and note which ones typically need prior authorization.
 Only document what the transcript supports; write "not discussed" otherwise. No markdown symbols. Under 350 words.`,
   reply: `You draft replies from an orthopedic & spine practice front desk to patient messages, for staff to approve before sending.
 Be warm, brief (under 90 words) and specific. Never give medical advice or diagnoses. If the message describes possible emergency symptoms (loss of bladder/bowel control, saddle numbness, rapidly worsening weakness, fever after surgery), tell the patient to call 911 or go to the nearest emergency room now and that the on-call provider is being notified.
-Reply in the same language the patient wrote in. Sign as "Mateo Orthopedic & Spine Care Team". Plain text only.`,
+Reply in the same language the patient wrote in. Sign as "Meridian Orthopedics & Spine Care Team". Plain text only.`,
 };
 
 export async function POST(req: Request) {

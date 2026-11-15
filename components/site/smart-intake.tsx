@@ -72,7 +72,7 @@ export function SmartIntake() {
       when = "Wed, Nov 18 · 9:15 AM";
     } else if (dur === "gt12" || dur === "6to12") {
       service = area === "neck" ? "Spine surgery consultation (cervical)" : "Spine & pain management consultation";
-      who = dur === "gt12" ? "Dr. Adrian Mateo, DO" : "Dr. Samuel Okafor, MD";
+      who = dur === "gt12" ? "Dr. Adrian Hale, DO" : "Dr. Samuel Okafor, MD";
       where = dur === "gt12" ? "Lindenhurst" : "Westbury";
       when = dur === "gt12" ? "Thu, Nov 19 · 1:00 PM" : "Wed, Nov 18 · 2:30 PM";
     }

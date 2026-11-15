@@ -14,31 +14,31 @@ const MSGS: Msg[] = [
     id: 1, from: "Maria Gonzalez", channel: "SMS", time: "7:52 AM", lang: "ES",
     text: "Hola, necesito cambiar mi cita del martes. ¿Tienen algo el jueves en Westbury? Gracias.",
     intent: "Appointment", conf: 0.97, route: "Front desk · Westbury",
-    draft: "Hola Maria, con gusto. Tenemos el jueves 19 de noviembre a las 2:00 PM o 3:15 PM en Westbury. Responda 1 o 2 para confirmar y cancelamos su cita del martes. — Equipo de Mateo Orthopedic & Spine Care",
+    draft: "Hola Maria, con gusto. Tenemos el jueves 19 de noviembre a las 2:00 PM o 3:15 PM en Westbury. Responda 1 o 2 para confirmar y cancelamos su cita del martes. — Equipo de Meridian Orthopedics & Spine Care",
   },
   {
     id: 2, from: "Thomas Russo", channel: "Portal", time: "8:05 AM", lang: "EN",
     text: "I had my neck surgery 9 days ago. Since last night I have a fever of 101.8 and the incision is red and draining. Is that normal?",
     intent: "Urgent: clinical", conf: 0.99, route: "On-call surgeon · callback < 15 min",
-    draft: "Mr. Russo, thank you for letting us know. Fever with redness and drainage after surgery needs to be checked today. Our on-call surgeon has been notified and will call you within 15 minutes. If you have trouble breathing or swallowing, or feel very unwell, call 911 or go to the nearest emergency room now. — Mateo Orthopedic & Spine Care Team",
+    draft: "Mr. Russo, thank you for letting us know. Fever with redness and drainage after surgery needs to be checked today. Our on-call surgeon has been notified and will call you within 15 minutes. If you have trouble breathing or swallowing, or feel very unwell, call 911 or go to the nearest emergency room now. — Meridian Orthopedics & Spine Care Team",
   },
   {
     id: 3, from: "Robert Williams", channel: "Voicemail", time: "8:21 AM", lang: "EN",
     text: "(transcribed) Hi, this is Robert Williams, workers' comp patient. Just checking if my neck injection was approved yet. Thanks.",
     intent: "Prior auth status", conf: 0.95, route: "Auto-answered from auth tracker",
-    draft: "Hi Robert, good news: your neck injection falls within the New York workers' comp treatment guidelines, so no separate approval is needed. You're scheduled for Tuesday, Nov 17 at 1:00 PM in Westbury. Please bring your WCB case number. — Mateo Orthopedic & Spine Care Team",
+    draft: "Hi Robert, good news: your neck injection falls within the New York workers' comp treatment guidelines, so no separate approval is needed. You're scheduled for Tuesday, Nov 17 at 1:00 PM in Westbury. Please bring your WCB case number. — Meridian Orthopedics & Spine Care Team",
   },
   {
     id: 4, from: "Kevin Murphy", channel: "SMS", time: "8:40 AM", lang: "EN",
     text: "Got a bill for $150 but I thought my insurance covered the visit?",
     intent: "Billing", conf: 0.93, route: "Billing team",
-    draft: "Hi Kevin, thanks for reaching out. We're reviewing your 11/14 visit with Oxford now and will text you within one business day with an explanation of benefits breakdown. No payment is due while we review. — Mateo Orthopedic & Spine Care Team",
+    draft: "Hi Kevin, thanks for reaching out. We're reviewing your 11/14 visit with Oxford now and will text you within one business day with an explanation of benefits breakdown. No payment is due while we review. — Meridian Orthopedics & Spine Care Team",
   },
   {
     id: 5, from: "Carmen Diaz", channel: "Portal", time: "9:02 AM", lang: "ES",
     text: "¿Puedo subir los discos de mi resonancia antes de la cita? Me los dieron en otro centro.",
     intent: "Records", conf: 0.94, route: "Auto-answered · imaging upload link",
-    draft: "Hola Carmen, ¡sí! Use este enlace seguro para subir sus imágenes antes de la cita: [enlace seguro]. También puede traer el disco ese día. Así el doctor podrá revisarlas con usted. — Equipo de Mateo Orthopedic & Spine Care",
+    draft: "Hola Carmen, ¡sí! Use este enlace seguro para subir sus imágenes antes de la cita: [enlace seguro]. También puede traer el disco ese día. Así el doctor podrá revisarlas con usted. — Equipo de Meridian Orthopedics & Spine Care",
   },
 ];
 

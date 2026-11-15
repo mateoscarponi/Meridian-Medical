@@ -1,12 +1,12 @@
-# Mateo Orthopedic & Spine Care
+# Meridian Orthopedics & Spine Care
 
 **A concept website and AI-powered operations platform for a multi-site medical practice.**
 
 ![Walkthrough: the practice website and its privacy-first appointment request, then the Care Operations Platform: the command center, the Prior Auth Copilot drafting and submitting a request, Document AI processing incoming faxes, the claim scrubber fixing errors, the AI front-desk agent booking a patient in Spanish, an HL7 message converted to FHIR, the impact calculator, and the live HIPAA scan](docs/demo.gif)
 
-**[Live demo](https://mateo-orthopedic.vercel.app)** · [Guided tour](#take-the-5-minute-tour) · [What success looks like](#what-success-looks-like) · [Run it locally](#run-it-locally)
+**[Live demo](https://meridian-orthopedics.vercel.app)** · [Guided tour](#take-the-5-minute-tour) · [What success looks like](#what-success-looks-like) · [Run it locally](#run-it-locally)
 
-> **Concept demo.** Mateo Orthopedic & Spine Care is not a real practice. Provider names and phone numbers are fictional, and every patient, claim and document in the platform is synthetic. No real patient data is used anywhere in this project.
+> **Concept demo.** Meridian Orthopedics & Spine Care is not a real practice. Provider names and phone numbers are fictional, and every patient, claim and document in the platform is synthetic. No real patient data is used anywhere in this project.
 
 ---
 
@@ -35,15 +35,15 @@ The platform is built around five outcomes. Every tool exists to move at least o
 
 ## Take the 5-minute tour
 
-The quickest way to see the project is the [live demo](https://mateo-orthopedic.vercel.app):
+The quickest way to see the project is the [live demo](https://meridian-orthopedics.vercel.app):
 
 1. **Website:** answer the smart appointment request and continue to the secure patient portal.
-2. **[Command Center](https://mateo-orthopedic.vercel.app/platform):** the five outcomes, work queues and AI-recommended actions.
-3. **[Prior Auth Copilot](https://mateo-orthopedic.vercel.app/platform/prior-auth):** press *Run Copilot* on the first request, then try *Carmen Diaz* to see a request the Copilot holds back.
-4. **[Document AI](https://mateo-orthopedic.vercel.app/platform/documents):** press *Process all* and watch each document get classified, extracted and routed.
-5. **[AI Front-Desk Agent](https://mateo-orthopedic.vercel.app/platform/agent):** play the Spanish rescheduling conversation and follow every tool call in the trace.
-6. **[HL7 / FHIR Lab](https://mateo-orthopedic.vercel.app/platform/interop):** send a real HL7 message to the server and inspect the FHIR result.
-7. **[Impact & ROI](https://mateo-orthopedic.vercel.app/platform/impact):** enter a practice's own numbers.
+2. **[Command Center](https://meridian-orthopedics.vercel.app/platform):** the five outcomes, work queues and AI-recommended actions.
+3. **[Prior Auth Copilot](https://meridian-orthopedics.vercel.app/platform/prior-auth):** press *Run Copilot* on the first request, then try *Carmen Diaz* to see a request the Copilot holds back.
+4. **[Document AI](https://meridian-orthopedics.vercel.app/platform/documents):** press *Process all* and watch each document get classified, extracted and routed.
+5. **[AI Front-Desk Agent](https://meridian-orthopedics.vercel.app/platform/agent):** play the Spanish rescheduling conversation and follow every tool call in the trace.
+6. **[HL7 / FHIR Lab](https://meridian-orthopedics.vercel.app/platform/interop):** send a real HL7 message to the server and inspect the FHIR result.
+7. **[Impact & ROI](https://meridian-orthopedics.vercel.app/platform/impact):** enter a practice's own numbers.
 
 ## What's inside
 

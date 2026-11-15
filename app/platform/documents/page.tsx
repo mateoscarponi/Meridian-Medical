@@ -23,7 +23,7 @@ interface Doc {
 const DOCS: Doc[] = [
   {
     id: "DOC-5521", source: "Fax", from: "(516) 555-0172 · Patel Family Medicine", received: "8:02 AM", type: "Referral", typeConf: 0.98, pages: 2,
-    lines: ["PATEL FAMILY MEDICINE — REFERRAL FORM", "Date: 11/13/2026        Urgency: Routine", "Patient: Carmen Diaz      DOB: 08/15/1972", "Insurance: Empire BCBS   Member ID: YRP451207733", "Referred to: Orthopedic Spine — Mateo Orthopedic & Spine", "Reason: Right sciatica x 5 weeks, failed NSAIDs", "Dx: M54.31 Sciatica, right side", "Referring: Rina Patel, MD   NPI 1888888801", "Please evaluate and treat. Notes attached."],
+    lines: ["PATEL FAMILY MEDICINE — REFERRAL FORM", "Date: 11/13/2026        Urgency: Routine", "Patient: Carmen Diaz      DOB: 08/15/1972", "Insurance: Empire BCBS   Member ID: YRP451207733", "Referred to: Orthopedic Spine — Meridian Orthopedics & Spine", "Reason: Right sciatica x 5 weeks, failed NSAIDs", "Dx: M54.31 Sciatica, right side", "Referring: Rina Patel, MD   NPI 1888888801", "Please evaluate and treat. Notes attached."],
     fields: [
       { label: "Patient", value: "Carmen Diaz", conf: 0.99 }, { label: "DOB", value: "08/15/1972", conf: 0.99 }, { label: "Insurance", value: "Empire BCBS", conf: 0.97 },
       { label: "Member ID", value: "YRP451207733", conf: 0.95 }, { label: "Reason", value: "Right sciatica x 5 weeks, failed NSAIDs", conf: 0.93 }, { label: "Dx", value: "M54.31", conf: 0.98 }, { label: "Referring", value: "Rina Patel, MD", conf: 0.97 },

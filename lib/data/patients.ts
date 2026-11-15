@@ -34,7 +34,7 @@ export const PATIENTS: DemoPatient[] = [
 ];
 
 export const PROVIDERS = [
-  { id: "pr-01", name: "Dr. Adrian Mateo, DO", short: "Dr. Mateo", specialty: "Spine Surgery", npi: "1999999901" },
+  { id: "pr-01", name: "Dr. Adrian Hale, DO", short: "Dr. Hale", specialty: "Spine Surgery", npi: "1999999901" },
   { id: "pr-02", name: "Dr. Elena Ruiz, MD", short: "Dr. Ruiz", specialty: "Orthopedics", npi: "1999999902" },
   { id: "pr-03", name: "Dr. Samuel Okafor, MD", short: "Dr. Okafor", specialty: "Pain Management", npi: "1999999903" },
   { id: "pr-04", name: "Daniel Park, PA-C", short: "D. Park, PA-C", specialty: "Orthopedics", npi: "1999999904" },

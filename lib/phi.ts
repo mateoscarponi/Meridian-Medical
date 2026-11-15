@@ -49,4 +49,4 @@ export function redact(text: string, hits = findPhi(text)) {
   return out + text.slice(last);
 }
 
-export const SAMPLE_PHI_TEXT = `Patient: Maria L. Gonzalez, DOB 04/12/1968, MRN MOS-204871, phone (516) 555-0191, lives at 142 Fulton Ave, Hempstead NY 11550. Member ID FC88310442. Seen 11/16/2026 by Dr. Mateo for lumbar radiculopathy. Prior PT at Go Rehab. Email for portal invite: maria.g.demo@example.com. Daughter Ms. Carla Gonzalez will drive her to the injection on Nov 24, 2026.`;
+export const SAMPLE_PHI_TEXT = `Patient: Maria L. Gonzalez, DOB 04/12/1968, MRN MOS-204871, phone (516) 555-0191, lives at 142 Fulton Ave, Hempstead NY 11550. Member ID FC88310442. Seen 11/16/2026 by Dr. Hale for lumbar radiculopathy. Prior PT at Go Rehab. Email for portal invite: maria.g.demo@example.com. Daughter Ms. Carla Gonzalez will drive her to the injection on Nov 24, 2026.`;

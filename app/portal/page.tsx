@@ -58,12 +58,12 @@ export default function PortalPage() {
           <Link href="/" className="flex items-center gap-2.5">
             <Monogram className="size-9 text-[15px]" />
             <span className="leading-tight">
-              <span className="block font-display text-[15px] font-semibold text-ink">Mateo Orthopedic</span>
+              <span className="block font-display text-[15px] font-semibold text-ink">Meridian Orthopedics</span>
               <span className="flex items-center gap-1 text-[11px] font-semibold text-sage"><Lock className="size-3" /> Secure Patient Portal</span>
             </span>
           </Link>
           <div className="flex items-center gap-3">
-            <span className="hidden font-mono text-[11px] text-muted sm:inline">portal.mateo-ortho.example</span>
+            <span className="hidden font-mono text-[11px] text-muted sm:inline">portal.meridian-ortho.example</span>
             <DemoPill className="!text-gold" />
           </div>
         </div>
