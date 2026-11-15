@@ -1,0 +1,34 @@
+{
+  "model": "logistic_regression",
+  "version": "2026.11-synthetic",
+  "trained_on": "12000 synthetic appointments (seed 7)",
+  "base_no_show_rate": 0.1337,
+  "test_auc": 0.7296,
+  "bias": -2.1454,
+  "features": [
+    "lead_time_days",
+    "prior_no_shows",
+    "new_patient",
+    "reminder_confirmed",
+    "medicaid",
+    "no_fault_or_wc",
+    "distance_miles",
+    "monday_or_friday",
+    "early_morning"
+  ],
+  "weights": {
+    "lead_time_days": 0.5654,
+    "prior_no_shows": 0.6311,
+    "new_patient": 0.4896,
+    "reminder_confirmed": -1.4106,
+    "medicaid": 0.5061,
+    "no_fault_or_wc": -0.2274,
+    "distance_miles": 0.3351,
+    "monday_or_friday": 0.2192,
+    "early_morning": 0.2156
+  },
+  "scaling": {
+    "lead_time_days": 30,
+    "distance_miles": 10
+  }
+}
