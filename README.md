@@ -2,7 +2,7 @@
 
 **A concept website and AI-powered operations platform for a multi-site medical practice.**
 
-![Walkthrough: the practice website with its rotating 3D spine, its privacy-first appointment request and the secure patient portal, then the Care Operations Platform: the command center, the Prior Auth Copilot drafting and submitting a request, Document AI processing incoming faxes, the claim scrubber fixing errors, the AI front-desk agent booking a patient in Spanish, an HL7 message converted to FHIR, the impact calculator, and the live HIPAA scan](docs/meridian-demo-v2.gif)
+![Walkthrough: the practice website with its rotating 3D spine, its privacy-first appointment request and the secure patient portal, then the Care Operations Platform: the command center, the Prior Auth Copilot drafting and submitting a request, Document AI processing incoming faxes, the claim scrubber fixing errors, the AI front-desk agent booking a patient in Spanish, an HL7 message converted to FHIR, the impact calculator, and the live HIPAA scan](docs/meridian-demo-v3.gif)
 
 **[Live demo](https://meridianmedical.vercel.app)** · [Guided tour](#take-the-5-minute-tour) · [What success looks like](#what-success-looks-like) · [Run it locally](#run-it-locally)
 
