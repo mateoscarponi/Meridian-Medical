@@ -14,7 +14,7 @@ const INITIAL: Ref[] = [
   { id: "R-3301", patient: "Carmen Diaz", from: "Patel Family Medicine", via: "Fax", reason: "Right sciatica, 5 wk", stage: "Received", days: 0 },
   { id: "R-3302", patient: "Grace Kim", from: "Northwell PCP – Garden City", via: "FHIR", reason: "Neck pain w/ arm numbness", stage: "Received", days: 1 },
   { id: "R-3303", patient: "Luis Moreno", from: "Queens Medical Assoc.", via: "Direct", reason: "Lumbar stenosis", stage: "Insurance verified", days: 1 },
-  { id: "R-3304", patient: "Ana Pereira", from: "Go Rehab PT", via: "Portal", reason: "Failed PT, consider ESI", stage: "Insurance verified", days: 3 },
+  { id: "R-3304", patient: "Ana Pereira", from: "Meridian Motion PT", via: "Portal", reason: "Failed PT, consider ESI", stage: "Insurance verified", days: 3 },
   { id: "R-3305", patient: "Priya Natarajan", from: "Garden City Pediatrics & Adult", via: "Fax", reason: "Adult scoliosis", stage: "Scheduled", days: 2 },
   { id: "R-3306", patient: "Thomas Russo", from: "Dr. Feld – Internal Medicine", via: "Direct", reason: "C5-C6 radiculopathy", stage: "Seen", days: 6 },
   { id: "R-3307", patient: "Linda Chen", from: "Flushing Family Care", via: "FHIR", reason: "Claudication", stage: "Seen", days: 2 },

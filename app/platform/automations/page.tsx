@@ -17,7 +17,7 @@ const RECIPES: Recipe[] = [
       { kind: "step", title: "Match or create patient", system: "MPI · EMR FHIR", ms: 500, log: "Matched MOS-205518 (0.97)" },
       { kind: "step", title: "Verify eligibility", system: "Clearinghouse 270/271", ms: 800, log: "Empire BCBS active · specialist copay $40 · referral not required" },
       { kind: "branch", title: "Prior auth needed for first visit?", system: "Payer rules", ms: 300, log: "No → continue" },
-      { kind: "step", title: "Offer 3 slots by SMS", system: "Scheduling · SMS", ms: 700, log: "Patient picked Tue 10:45 AM Westbury" },
+      { kind: "step", title: "Offer 3 slots by SMS", system: "Scheduling · SMS", ms: 700, log: "Patient picked Tue 10:45 AM Garden City" },
       { kind: "step", title: "Send forms & imaging link", system: "Portal", ms: 400, log: "Intake (ES) + HIPAA + imaging upload sent" },
       { kind: "step", title: "Notify referring office", system: "Direct messaging", ms: 400, log: "Appointment confirmation sent to Patel Family Medicine" },
     ],
@@ -49,7 +49,7 @@ const RECIPES: Recipe[] = [
       { kind: "trigger", title: "Procedure completed", system: "EMR (HL7 SIU/DFT)", ms: 300, log: "ACDF C5-C6 · Thomas Russo" },
       { kind: "step", title: "Day-1 SMS questionnaire", system: "SMS", ms: 700, log: "Pain 4/10 · no fever · eating & drinking" },
       { kind: "branch", title: "Any red flag?", system: "NLP triage", ms: 400, log: "No → schedule day-7 check" },
-      { kind: "step", title: "Day-7 check & PT referral", system: "SMS · Go Rehab", ms: 600, log: "PT referral sent; first visit booked" },
+      { kind: "step", title: "Day-7 check & PT referral", system: "SMS · Meridian Motion PT", ms: 600, log: "PT referral sent; first visit booked" },
     ],
   },
 ];

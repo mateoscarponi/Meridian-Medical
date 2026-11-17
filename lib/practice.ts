@@ -1,43 +1,43 @@
 // Public-facing practice content for the demo site.
-// Clinical scope mirrors a real Long Island orthopedic & spine practice; names, phone and
-// street details are fictional so the demo can never be mistaken for a real office.
+// A fictional orthopedic & spine practice. Names, founding year, tagline, office towns, phone and
+// provider bios are all invented so the demo can never be mistaken for a real office.
 
 export const PRACTICE = {
   name: "Meridian Orthopedics & Spine Care",
   short: "Meridian Orthopedics & Spine",
-  tagline: "Our Patients. Our Purpose. Our Passion.",
+  tagline: "Precise care. A clear path back to motion.",
   phone: "(516) 555-0148",
-  since: 2018,
-  region: "Long Island & Queens",
+  since: 2011,
+  region: "Nassau & Suffolk",
 };
 
 export const SPECIALTIES = [
   {
     slug: "spine-surgery",
-    title: "Spine Surgery",
+    title: "Spine & Neck Surgery",
     blurb:
-      "Fellowship-trained care for complex spine and deformity, from minimally invasive decompression to cervical fusion and disc replacement.",
-    items: ["Minimally invasive spine surgery", "ACDF & cervical disc replacement", "Adult scoliosis & deformity", "Complex reconstruction"],
+      "Motion-preserving and minimally invasive surgery for the neck and back, planned only after conservative care has been given a fair chance.",
+    items: ["Minimally invasive decompression", "ACDF & cervical disc replacement", "Adult scoliosis care", "Revision spine surgery"],
   },
   {
     slug: "pain-management",
-    title: "Pain Management",
+    title: "Interventional Spine",
     blurb:
-      "An on-site interventional suite for image-guided relief, so most patients improve without ever needing an operation.",
+      "Image-guided procedures in our own suite that calm inflamed nerves and joints, so most patients recover without an operation.",
     items: ["Epidural steroid injections", "Facet & medial branch blocks", "Radiofrequency ablation", "Medication management"],
   },
   {
     slug: "orthopedics",
-    title: "Orthopedics",
+    title: "Joint & Sports Medicine",
     blurb:
-      "Diagnosis and treatment of joint, tendon and trauma-related conditions, including urgent orthopedic visits without the ER wait.",
-    items: ["Osteoarthritis & joint pain", "Sports & work injuries", "Fracture care", "Orthopedic urgent care"],
+      "Shoulder, knee, hip and hand care for athletes, workers and weekend gardeners, plus walk-in injury visits without the ER wait.",
+    items: ["Arthritis & joint pain", "Sports & work injuries", "Fracture care", "Walk-in injury clinic"],
   },
   {
     slug: "physical-therapy",
-    title: "Physical Therapy",
+    title: "Rehab & Movement",
     blurb:
-      "Go Rehab-style in-house physical therapy that keeps your surgeon, pain physician and therapist working from one plan.",
+      "In-house physical therapy at Meridian Motion PT, so your surgeon, spine physician and therapist all work from one plan.",
     items: ["Post-surgical rehab", "Spine stabilization", "Manual therapy", "Return-to-work programs"],
   },
 ] as const;
@@ -62,36 +62,36 @@ export const CARE_PATH = [
 
 export const TEAM = [
   {
-    name: "Dr. Adrian Hale, DO",
-    role: "Orthopedic Spine Surgeon · Director",
-    detail: "Fellowship-trained in complex spine & deformity. Faculty, orthopedic residency program.",
+    name: "Dr. Adrian Hale, MD",
+    role: "Spine Surgeon · Medical Director",
+    detail: "Minimally invasive and motion-preserving neck and back surgery. Leads the practice's quality program.",
     initials: "AH",
   },
   {
     name: "Dr. Elena Ruiz, MD",
-    role: "Board-Certified Orthopedic Surgeon",
-    detail: "Joint preservation, trauma and work-related orthopedic injuries.",
+    role: "Joint & Sports Medicine Surgeon",
+    detail: "Shoulder and knee arthroscopy, joint preservation and work-related injuries.",
     initials: "ER",
   },
   {
     name: "Dr. Samuel Okafor, MD",
-    role: "Interventional Pain Management",
-    detail: "Image-guided spine injections, radiofrequency ablation and non-surgical care.",
+    role: "Physiatrist · Interventional Spine",
+    detail: "Physical medicine & rehabilitation: image-guided injections, nerve ablation and non-surgical recovery plans.",
     initials: "SO",
   },
   {
     name: "Daniel Park, PA-C",
-    role: "Orthopedics",
-    detail: "Same-week new-patient visits, post-operative care and urgent orthopedic visits.",
+    role: "Physician Assistant · Walk-in Clinic",
+    detail: "Same-week new-patient visits, post-operative checks and walk-in injury care.",
     initials: "DP",
   },
 ];
 
 export const LOCATIONS = [
-  { town: "East Meadow", kind: "Orthopedic Urgent Care", note: "Walk-ins welcome for sprains, fractures & acute back pain.", county: "Nassau" },
-  { town: "Westbury", kind: "Spine Center & Procedure Suite", note: "Interventional pain suite and surgical consultations.", county: "Nassau" },
-  { town: "Lindenhurst", kind: "Spine & Orthopedic Office", note: "Consultations, follow-ups and physical therapy.", county: "Suffolk" },
-  { town: "Elmhurst", kind: "Queens Office", note: "Spine surgery consultations on Queens Boulevard.", county: "Queens" },
+  { town: "Hicksville", kind: "Walk-in Injury Clinic", note: "No appointment needed for sprains, fractures & acute back pain.", county: "Nassau" },
+  { town: "Garden City", kind: "Spine Center & Procedure Suite", note: "Image-guided procedure suite and surgical consultations.", county: "Nassau" },
+  { town: "Huntington", kind: "Spine & Joint Office", note: "Consultations, follow-ups and imaging review.", county: "Suffolk" },
+  { town: "Smithtown", kind: "Rehab & Movement Center", note: "Home of Meridian Motion PT and return-to-work programs.", county: "Suffolk" },
 ];
 
 export const INSURANCE = [

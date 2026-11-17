@@ -8,7 +8,7 @@ import {
   Network, Receipt, ScanText, Share2, ShieldCheck, Workflow, X, Layers, ArrowLeft, BadgeCheck, Briefcase, Lock,
 } from "lucide-react";
 import { useIdle } from "../use-idle";
-import { Monogram, DemoPill } from "../site/brand";
+import { BrandMark, DemoPill } from "../site/brand";
 import { cx } from "../ui";
 
 export const NAV_GROUPS = [
@@ -109,7 +109,7 @@ export function PlatformShell({ children }: { children: ReactNode }) {
       )}
       <aside className="scroll-thin fixed inset-y-0 left-0 z-40 hidden w-64 flex-col overflow-y-auto bg-ink px-3 py-5 lg:flex">
         <Link href="/" className="flex items-center gap-2.5 px-3">
-          <Monogram light className="size-9 text-[15px]" />
+          <BrandMark light className="size-9" />
           <span className="leading-tight">
             <span className="block font-display text-[15px] font-semibold text-white">Meridian Orthopedics</span>
             <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">Care Operations</span>

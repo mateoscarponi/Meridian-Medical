@@ -45,13 +45,13 @@ export default function Home() {
           <div className="pointer-events-none absolute -right-32 top-40 size-[420px] rounded-full bg-gold-soft blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-4 pb-20 pt-14 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:pt-20">
             <div className="animate-fade-up">
-              <Eyebrow>Long Island · Queens</Eyebrow>
+              <Eyebrow>Nassau · Suffolk</Eyebrow>
               <h1 className="mt-4 font-display text-[44px] leading-[1.04] font-semibold tracking-tight text-ink sm:text-6xl">
                 Orthopedic &amp; spine care,
                 <span className="block text-ocean">without the wait.</span>
               </h1>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
-                Fellowship-trained spine surgery, interventional pain management, orthopedics and physical therapy under one roof.
+                Spine and neck surgery, interventional spine care, joint and sports medicine, and in-house rehab, all coordinated by one team.
                 We start with the least invasive path, and our care team handles referrals, authorizations and paperwork for you.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -64,8 +64,8 @@ export default function Home() {
               </div>
               <dl className="mt-12 grid max-w-xl grid-cols-2 gap-x-5 gap-y-6 border-t border-line pt-8 sm:grid-cols-4">
                 {[
-                  ["Since 2018", "Caring for the community"],
-                  ["4 offices", "Nassau, Suffolk & Queens"],
+                  ["Since 2011", "Treating Long Island families"],
+                  ["4 offices", "Across Nassau & Suffolk"],
                   ["Same week", "New-patient visits"],
                   ["Non-surgical", "Conservative care first; surgery as a last resort"],
                 ].map(([a, b]) => (
@@ -118,7 +118,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
               <Reveal>
-                <Eyebrow>Our philosophy</Eyebrow>
+                <Eyebrow>How we treat</Eyebrow>
                 <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink">Surgery is the last step, not the first.</h2>
                 <p className="mt-4 text-[16px] leading-relaxed text-muted">
                   Most neck and back pain improves with the right conservative care. When it doesn&apos;t, we escalate thoughtfully and involve you and your family in every decision.
@@ -187,7 +187,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <Reveal className="max-w-2xl">
               <Eyebrow>Locations</Eyebrow>
-              <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink">Four offices across Long Island &amp; Queens.</h2>
+              <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-ink">Four offices across Nassau &amp; Suffolk.</h2>
             </Reveal>
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {LOCATIONS.map((l, i) => (

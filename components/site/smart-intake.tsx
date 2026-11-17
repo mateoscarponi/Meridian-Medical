@@ -59,21 +59,21 @@ export function SmartIntake() {
     if (!area || !dur || !ins) return null;
     let service = "Spine evaluation";
     let who = "Daniel Park, PA-C";
-    let where = "Westbury";
+    let where = "Garden City";
     let when = "Tue, Nov 17 · 10:45 AM";
     if (area === "injury" || (dur === "lt2" && area === "joint")) {
-      service = "Orthopedic urgent care";
+      service = "Walk-in injury clinic";
       who = "Walk-in team";
-      where = "East Meadow";
+      where = "Hicksville";
       when = "Today · walk in, avg. wait 25 min";
     } else if (area === "joint") {
       service = "Orthopedic consultation";
       who = "Dr. Elena Ruiz, MD";
       when = "Wed, Nov 18 · 9:15 AM";
     } else if (dur === "gt12" || dur === "6to12") {
-      service = area === "neck" ? "Spine surgery consultation (cervical)" : "Spine & pain management consultation";
-      who = dur === "gt12" ? "Dr. Adrian Hale, DO" : "Dr. Samuel Okafor, MD";
-      where = dur === "gt12" ? "Lindenhurst" : "Westbury";
+      service = area === "neck" ? "Spine surgery consultation (cervical)" : "Interventional spine consultation";
+      who = dur === "gt12" ? "Dr. Adrian Hale, MD" : "Dr. Samuel Okafor, MD";
+      where = dur === "gt12" ? "Huntington" : "Garden City";
       when = dur === "gt12" ? "Thu, Nov 19 · 1:00 PM" : "Wed, Nov 18 · 2:30 PM";
     }
     const bring = ["Photo ID & insurance card", "Any MRI / X-ray discs and reports", "Medication list"];

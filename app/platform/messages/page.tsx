@@ -12,9 +12,9 @@ interface Msg { id: number; from: string; channel: "SMS" | "Portal" | "Voicemail
 const MSGS: Msg[] = [
   {
     id: 1, from: "Maria Gonzalez", channel: "SMS", time: "7:52 AM", lang: "ES",
-    text: "Hola, necesito cambiar mi cita del martes. ¿Tienen algo el jueves en Westbury? Gracias.",
-    intent: "Appointment", conf: 0.97, route: "Front desk · Westbury",
-    draft: "Hola Maria, con gusto. Tenemos el jueves 19 de noviembre a las 2:00 PM o 3:15 PM en Westbury. Responda 1 o 2 para confirmar y cancelamos su cita del martes. — Equipo de Meridian Orthopedics & Spine Care",
+    text: "Hola, necesito cambiar mi cita del martes. ¿Tienen algo el jueves en Garden City? Gracias.",
+    intent: "Appointment", conf: 0.97, route: "Front desk · Garden City",
+    draft: "Hola Maria, con gusto. Tenemos el jueves 19 de noviembre a las 2:00 PM o 3:15 PM en Garden City. Responda 1 o 2 para confirmar y cancelamos su cita del martes. — Equipo de Meridian Orthopedics & Spine Care",
   },
   {
     id: 2, from: "Thomas Russo", channel: "Portal", time: "8:05 AM", lang: "EN",
@@ -26,7 +26,7 @@ const MSGS: Msg[] = [
     id: 3, from: "Robert Williams", channel: "Voicemail", time: "8:21 AM", lang: "EN",
     text: "(transcribed) Hi, this is Robert Williams, workers' comp patient. Just checking if my neck injection was approved yet. Thanks.",
     intent: "Prior auth status", conf: 0.95, route: "Auto-answered from auth tracker",
-    draft: "Hi Robert, good news: your neck injection falls within the New York workers' comp treatment guidelines, so no separate approval is needed. You're scheduled for Tuesday, Nov 17 at 1:00 PM in Westbury. Please bring your WCB case number. — Meridian Orthopedics & Spine Care Team",
+    draft: "Hi Robert, good news: your neck injection falls within the New York workers' comp treatment guidelines, so no separate approval is needed. You're scheduled for Tuesday, Nov 17 at 1:00 PM in Garden City. Please bring your WCB case number. — Meridian Orthopedics & Spine Care Team",
   },
   {
     id: 4, from: "Kevin Murphy", channel: "SMS", time: "8:40 AM", lang: "EN",

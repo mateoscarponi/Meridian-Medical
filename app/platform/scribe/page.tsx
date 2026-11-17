@@ -163,7 +163,7 @@ export default function ScribePage() {
             <ul className="space-y-3 p-5 text-[13px]">
               {[
                 ["Order 64483 created", "→ Prior Auth Copilot case PA-24812 opened with evidence pre-attached"],
-                ["Procedure scheduling", "→ Westbury suite, next available after expected auth decision"],
+                ["Procedure scheduling", "→ Garden City suite, next available after expected auth decision"],
                 ["After-visit summary", "→ sent to patient portal in their preferred language"],
                 ["Quality measures", "→ pain score & functional status captured for MIPS reporting"],
               ].map(([a, b]) => (

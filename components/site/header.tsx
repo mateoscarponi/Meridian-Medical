@@ -34,7 +34,7 @@ export function SiteHeader() {
             <span className="hidden sm:inline">Serving {PRACTICE.region} since {PRACTICE.since}</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/#locations" className="hidden hover:text-white md:inline">East Meadow Urgent Care · Walk-ins welcome</Link>
+            <Link href="/#locations" className="hidden hover:text-white md:inline">Hicksville Walk-in Injury Clinic · No appointment needed</Link>
             <a href="tel:5165550148" className="inline-flex items-center gap-1.5 font-semibold text-white">
               <Phone className="size-3.5" /> {PRACTICE.phone}
             </a>

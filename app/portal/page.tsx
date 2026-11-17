@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowLeft, CalendarCheck2, CheckCircle2, KeyRound, Lock, ShieldCheck, Timer } from "lucide-react";
-import { Monogram, DemoPill } from "@/components/site/brand";
+import { BrandMark, DemoPill } from "@/components/site/brand";
 import { Button, Field, inputCls, cx } from "@/components/ui";
 import { useIdle } from "@/components/use-idle";
 
@@ -56,7 +56,7 @@ export default function PortalPage() {
       <header className="border-b border-line bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <Monogram className="size-9 text-[15px]" />
+            <BrandMark className="size-9" />
             <span className="leading-tight">
               <span className="block font-display text-[15px] font-semibold text-ink">Meridian Orthopedics</span>
               <span className="flex items-center gap-1 text-[11px] font-semibold text-sage"><Lock className="size-3" /> Secure Patient Portal</span>

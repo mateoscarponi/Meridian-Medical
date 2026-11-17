@@ -292,10 +292,10 @@ export const SAMPLE_MESSAGES: { id: string; label: string; description: string; 
     label: "ADT^A04 — Register patient",
     description: "Front desk registers a new patient in the EMR; insurance and visit data travel together.",
     text: [
-      "MSH|^~\\&|ECW|MOS_WESTBURY|MOS_INTEGRATION|MERIDIAN_ORTHO|20261116081502||ADT^A04^ADT_A01|MSG00041871|P|2.5.1",
+      "MSH|^~\\&|ECW|MOS_GARDENCITY|MOS_INTEGRATION|MERIDIAN_ORTHO|20261116081502||ADT^A04^ADT_A01|MSG00041871|P|2.5.1",
       "EVN|A04|20261116081500",
       "PID|1||MOS-204871^^^MOS^MR||Gonzalez^Maria^L||19680412|F|||142 Fulton Ave^^Hempstead^NY^11550||(516)555-0191||spa^Spanish|||ACCT-88120",
-      "PV1|1|O|WB^^^Westbury||||1999999901^Hale^Adrian^^^DO|1888888801^Patel^Rina^^^MD|ORT||||||||||V-3381102|||||||||||||||||||||||||20261116081500",
+      "PV1|1|O|GC^^^Garden City||||1999999901^Hale^Adrian^^^MD|1888888801^Patel^Rina^^^MD|ORT||||||||||V-3381102|||||||||||||||||||||||||20261116081500",
       "IN1|1|FIDELIS-MCD|FC01|Fidelis Care|||||||||||||||||||||||||||||||||FC88310442",
       "DG1|1|I10|M54.16^Radiculopathy, lumbar region^I10||20261116|A",
     ].join("\n"),
@@ -305,11 +305,11 @@ export const SAMPLE_MESSAGES: { id: string; label: string; description: string; 
     label: "SIU^S12 — New appointment",
     description: "Scheduling system books a spine consult; the platform turns it into a FHIR Appointment and triggers reminders.",
     text: [
-      "MSH|^~\\&|ATHENA_SCHED|MOS_LINDENHURST|MOS_INTEGRATION|MERIDIAN_ORTHO|20261116093011||SIU^S12|SCH77120|P|2.5.1",
+      "MSH|^~\\&|ATHENA_SCHED|MOS_HUNTINGTON|MOS_INTEGRATION|MERIDIAN_ORTHO|20261116093011||SIU^S12|SCH77120|P|2.5.1",
       "SCH|A-55120|A-55120|||||SPINECONS^Spine surgery consultation|NEW^New patient|40|min|^^40^20261124101500^20261124105500||||||||||||||Booked",
       "PID|1||MOS-187205^^^MOS^MR||Chen^Linda||19520118|F|||88 Main St^^Flushing^NY^11354||(718)555-0164",
-      "AIP|1||1999999901^Hale^Adrian^^^DO|SURGEON",
-      "AIL|1||LH^Lindenhurst Office",
+      "AIP|1||1999999901^Hale^Adrian^^^MD|SURGEON",
+      "AIL|1||HU^Huntington Office",
     ].join("\n"),
   },
   {

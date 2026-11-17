@@ -17,7 +17,7 @@ const SCORECARD = [
 
 const ACTIONS = [
   { id: 1, icon: ClipboardCheck, title: "3 Aetna authorizations pending > 5 business days", detail: "Copilot drafted peer-to-peer requests with the chart evidence attached.", cta: "Send P2P requests", href: "/platform/prior-auth", tone: "warn" as const },
-  { id: 2, icon: CalendarClock, title: "Westbury, Thu 2–4 PM: 4 open slots, 6 waitlist matches", detail: "Matched by visit type, insurance and distance. Expected fill rate 83%.", cta: "Text offers", href: "/platform/scheduling", tone: "ocean" as const },
+  { id: 2, icon: CalendarClock, title: "Garden City, Thu 2–4 PM: 4 open slots, 6 waitlist matches", detail: "Matched by visit type, insurance and distance. Expected fill rate 83%.", cta: "Text offers", href: "/platform/scheduling", tone: "ocean" as const },
   { id: 3, icon: Receipt, title: "2 claims at high denial risk ($2,480)", detail: "Bundled 77003 with 64483 and an invalid M54.5 code. Fixes are pre-filled.", cta: "Apply fixes", href: "/platform/claims", tone: "danger" as const },
   { id: 4, icon: Share2, title: "Referral loop open 6 days: Dr. Patel's office", detail: "Consult note signed 11/12. Auto-send via Direct secure messaging.", cta: "Close the loop", href: "/platform/referrals", tone: "ocean" as const },
 ];

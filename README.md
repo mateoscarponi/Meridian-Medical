@@ -14,7 +14,7 @@
 
 Behind every patient visit there is a long trail of administrative work. Front-desk teams verify insurance by phone, authorization specialists rebuild the same paperwork for every payer, faxes are retyped into the medical record by hand, and billing teams fix claim errors only after a payer has already denied them. In a practice with several locations, that work multiplies, and it takes time away from patients.
 
-This project shows, end to end, how software and applied AI can take much of that burden off staff and providers. It is modeled on a multi-site orthopedic and spine practice on Long Island and in Queens, a setting with heavy authorization, workers' compensation and no-fault volume. The same approach applies to almost any medical practice.
+This project shows, end to end, how software and applied AI can take much of that burden off staff and providers. It is modeled on a multi-site orthopedic and spine practice across Nassau and Suffolk counties on Long Island, a setting with heavy authorization, workers' compensation and no-fault volume. The same approach applies to almost any medical practice.
 
 It has two parts:
 
