@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/site/header";
 import { SmartIntake } from "@/components/site/smart-intake";
+import { HeroSpine } from "@/components/site/hero-spine";
 import { Reveal } from "@/components/site/reveal";
 import { SiteFooter } from "@/components/site/footer";
 import { Eyebrow } from "@/components/ui";
@@ -61,22 +62,23 @@ export default function Home() {
                   <MapPin className="size-4" /> Find a location
                 </a>
               </div>
-              <dl className="mt-12 grid max-w-xl grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
+              <dl className="mt-12 grid max-w-xl grid-cols-2 gap-x-5 gap-y-6 border-t border-line pt-8 sm:grid-cols-4">
                 {[
-                  ["Since 2018", "caring for the community"],
+                  ["Since 2018", "Caring for the community"],
                   ["4 offices", "Nassau, Suffolk & Queens"],
-                  ["Same week", "new-patient visits"],
-                  ["Non-surgical", "first, always"],
+                  ["Same week", "New-patient visits"],
+                  ["Non-surgical", "Conservative care first; surgery as a last resort"],
                 ].map(([a, b]) => (
                   <div key={a}>
-                    <dt className="font-display text-[19px] font-semibold text-ink">{a}</dt>
-                    <dd className="mt-1 text-[13px] text-muted">{b}</dd>
+                    <dt className="whitespace-nowrap font-display text-[17px] font-semibold text-gold xl:text-[19px]">{a}</dt>
+                    <dd className="mt-1 text-[13px] leading-snug text-taupe">{b}</dd>
                   </div>
                 ))}
               </dl>
             </div>
-            <div className="animate-fade-up [animation-delay:150ms]">
+            <div className="animate-fade-up [animation-delay:150ms] lg:-mt-8">
               <SmartIntake />
+              <HeroSpine />
             </div>
           </div>
         </section>
