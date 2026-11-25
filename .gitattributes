@@ -3,3 +3,6 @@
 *.png binary
 *.wasm binary
 *.woff2 binary
+
+# Keep generated/build output out of GitHub language stats.
+public/pkg/** linguist-generated
