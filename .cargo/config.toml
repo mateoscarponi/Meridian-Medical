@@ -1,3 +1,7 @@
+# Vercel's Rust builder reads `build.target` from this file and fails if there is no [build]
+# table at all, so keep this (empty) section.
+[build]
+
 # Use Rust's bundled (self-contained) MinGW linker on Windows GNU. A system MinGW on PATH
 # (e.g. WinLibs) breaks when the user folder contains a space ("C:\Users\Mateo G").
 #
