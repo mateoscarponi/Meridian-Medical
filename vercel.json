@@ -4,6 +4,7 @@
   "buildCommand": "",
   "installCommand": "",
   "outputDirectory": "public",
+  "build": { "env": { "RUSTFLAGS": "--cfg erase_components" } },
   "rewrites": [{ "source": "/(.*)", "destination": "/api/vercel" }],
   "headers": [
     {
