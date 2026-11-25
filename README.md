@@ -1,14 +1,36 @@
 # Meridian Orthopedics & Spine Care
 
-**A concept website and AI-powered operations platform for a multi-site medical practice.**
+**A concept website and AI-powered operations platform for a multi-site medical practice, built entirely in Rust.**
 
 ![Walkthrough: the practice website with its rotating 3D spine, its privacy-first appointment request and the secure patient portal, then the Care Operations Platform: the command center, the Prior Auth Copilot drafting and submitting a request, Document AI processing incoming faxes, the claim scrubber fixing errors, the AI front-desk agent booking a patient in Spanish, an HL7 message converted to FHIR, the impact calculator, and the live HIPAA scan](docs/meridian-demo-v3.gif)
 
-**[Live demo](https://meridianmedical.vercel.app)** · [Guided tour](#take-the-5-minute-tour) · [What success looks like](#what-success-looks-like) · [Run it locally](#run-it-locally)
+**[Live demo](https://meridianmedical.vercel.app)** · [Migrated to Rust](#migrated-from-typescript-and-python-to-rust) · [Guided tour](#take-the-5-minute-tour) · [What success looks like](#what-success-looks-like) · [Run it locally](#run-it-locally)
 
 > **Concept demo.** Meridian Orthopedics & Spine Care is not a real practice. Provider names and phone numbers are fictional, and every patient, claim and document in the platform is synthetic. No real patient data is used anywhere in this project.
 
 ---
+
+## Migrated from TypeScript and Python to Rust
+
+The project was first built with Next.js and React in **TypeScript**, plus a **Python** script to train the no-show model. It has since been **migrated completely to Rust**: the web server, every page and component, the API routes, the clinical logic, the 3D model on the home page and the machine-learning training. The original TypeScript version is preserved in the [`typescript-legacy`](https://github.com/mateoscarponi/Meridian-Medical/tree/typescript-legacy) branch and the [`v1-typescript`](https://github.com/mateoscarponi/Meridian-Medical/releases/tag/v1-typescript) tag.
+
+**Same functionality, same look, no regressions.** The migration was verified against the original, not just eyeballed:
+
+- **Logic parity:** the original TypeScript code and the new Rust code were run on the same inputs (clinical NLP on eight notes, PHI de-identification, HL7 → FHIR conversion of every sample message, prior-authorization criteria and letters, and the generated SOAP note). The outputs match field by field: **0 differences across 18 test cases**.
+- **Visual parity:** all **633 Tailwind classes** of the original are present in the Rust build, with the same colors, fonts, spacing and animations. The visible text of all **21 pages** was compared word by word against the TypeScript site; the only changes are the ones that now say Rust instead of TypeScript or Python.
+- **Model parity:** the no-show model trainer reproduces Python's random number generator exactly, so the Rust version produces **byte-identical model weights**.
+
+**Faster.** Measured on a local machine with the release build:
+
+| | Rust |
+|---|---|
+| Time to server-render a full page | **~1.3 ms** |
+| Throughput | **~3,000 full pages per second** (16 concurrent clients) |
+| FHIR API response | ~0.5 ms |
+| Server memory | ~18 MB |
+| Training the no-show model (Applied AI) | **0.3 seconds**, compared with **~21 seconds** in Python (about 70× faster), with identical results |
+
+The whole browser bundle (all 21 pages) is a single WebAssembly module of about 580 KB compressed, downloaded once; after that, moving between pages downloads nothing more.
 
 ## Why this project exists
 
@@ -50,6 +72,7 @@ The quickest way to see the project is the [live demo](https://meridianmedical.v
 ### The practice website
 
 - Specialties, conditions treated, care philosophy, team, four locations, and a visit checklist with accepted insurance.
+- A **rotating 3D model of the spine**, rendered with WebGL2 directly from Rust: procedural geometry and physically based shading, drawn in 2 draw calls per frame. It pauses when off screen and respects reduced-motion settings.
 - **Smart appointment request:** four quick questions route the patient to the right specialty, provider and location, and list what to bring for their type of coverage. Emergency symptoms stop the flow and direct the patient to emergency care.
 - **Secure patient portal:** the only place personal details are entered. It is separated from the marketing site, never cached, and clears itself after 15 minutes of inactivity.
 - **Privacy & HIPAA page** in plain language, with a Notice of Privacy Practices summary and patient rights.
@@ -83,8 +106,8 @@ The quickest way to see the project is the [live demo](https://meridianmedical.v
 
 **Applied AI and machine learning.**
 - Large language model integration (Claude) for clinical notes and patient replies, with an on-device fallback so the demo always works.
-- Clinical language processing with negation and red-flag detection.
-- A no-show prediction model trained in Python and scored live in the browser.
+- Clinical language processing with negation and red-flag detection, compiled to WebAssembly so it runs in the browser and no patient text leaves the device.
+- A no-show prediction model trained in Rust (0.3 seconds) and scored live in the browser.
 - An AI agent that uses real tools against the FHIR API, inside clear guardrails.
 
 **Revenue cycle knowledge.** Prior authorization criteria and evidence, diagnosis and procedure coding (ICD-10-CM, CPT), bundling and modifier rules, denial prevention, and New York workers' compensation and no-fault requirements.
@@ -98,7 +121,7 @@ The quickest way to see the project is the [live demo](https://meridianmedical.v
 Even as a demo, the project follows the practices a real medical website and platform need:
 
 - **Personal data stays out of the website.** The appointment request collects no names, contact details or insurance IDs. Identifiers are entered only in the secure portal, and the hand-off between them never places health information in a web address.
-- **Encrypted, hardened delivery.** Every page is served with strict security headers: forced HTTPS, a content security policy that allows only the site's own code, protection against being embedded in other sites, and blocked camera, microphone and location access. Pages and APIs that carry patient data are never cached.
+- **Encrypted, hardened delivery.** Every page is served with strict security headers: forced HTTPS, a content security policy with a fresh nonce on every page so only the site's own code can run, protection against being embedded in other sites, and blocked camera, microphone and location access. Pages and APIs that carry patient data are never cached.
 - **No tracking technologies.** No advertising pixels, session recording, third-party chat widgets or tracking cookies. Fonts are self-hosted.
 - **Minimum necessary for AI.** Direct identifiers are removed from any text before it is sent to the language model, even though the model provider would be covered by a Business Associate Agreement.
 - **Accountability.** Server routes write audit events that record who did what and when, never the patient data itself. The platform locks automatically after 15 minutes of inactivity.
@@ -106,24 +129,47 @@ Even as a demo, the project follows the practices a real medical website and pla
 
 ## Run it locally
 
-Requirements: Node.js 20 or newer.
+Requirements: [Rust](https://rustup.rs) (stable), the WebAssembly target and `wasm-bindgen-cli` (its version must match the `wasm-bindgen` crate in `Cargo.lock`):
 
 ```bash
-npm install
-npm run dev
+rustup target add wasm32-unknown-unknown
+cargo install wasm-bindgen-cli --version 0.2.130 --locked
 ```
 
-Open http://localhost:3000 for the website and http://localhost:3000/platform for the platform.
-
-**Optional language model.** Copy `.env.example` to `.env.local` and set `ANTHROPIC_API_KEY` to have the Clinical Scribe and Patient Messages generate text with Claude. Without a key, both use their built-in generators.
-
-**Retrain the no-show model** (Python 3, standard library only):
+Build and run:
 
 ```bash
-python ml/no_show_model.py
+bash scripts/build.sh
+./target/release/meridian_medical
 ```
 
-This writes the learned weights to `lib/models/no-show-weights.json`, which the scheduling tool reads.
+Open http://localhost:3018 for the website and http://localhost:3018/platform for the platform.
+
+`scripts/build.sh` compiles the browser bundle (Rust → WebAssembly), generates its JavaScript bindings, copies the static assets and compiles the server. On Windows it uses `scripts/env.sh` to work around MinGW tooling issues with spaces in the user folder.
+
+**Optional language model.** Set the `ANTHROPIC_API_KEY` environment variable (see `.env.example`) to have the Clinical Scribe and Patient Messages generate text with Claude. Without a key, both use their built-in generators.
+
+**Retrain the no-show model:**
+
+```bash
+cargo run --release --bin train_noshow
+```
+
+This writes the learned weights to `data/no-show-weights.json`, which is embedded in the scheduling tool at compile time.
+
+**Tests and parity checks:**
+
+```bash
+cargo test
+node scripts/parity-ts.mjs <path-to-typescript-version>   # runs the original TypeScript logic
+cargo test --test parity && python scripts/compare-parity.py
+```
+
+**Styles.** `public/main.css` is generated from the Tailwind classes in the Rust sources with `node scripts/build-css.mjs <path-to-node_modules-with-tailwind>`; it only needs regenerating after changing classes.
+
+### Deployment
+
+The site runs on Vercel with Vercel's native Rust runtime. `api/vercel.rs` runs the same Axum application as the local server inside a Vercel Function, and `vercel.json` routes every request to it. The WebAssembly bundle, stylesheet and fonts are prebuilt into `public/` and served from Vercel's CDN.
 
 ### Public API endpoints
 
@@ -137,19 +183,26 @@ This writes the learned weights to `lib/models/no-show-weights.json`, which the 
 
 ## Built with
 
-- **Next.js 15 and React 19** with **TypeScript**, styled with **Tailwind CSS 4**
-- **Anthropic SDK** for the language model integration
-- **Python** for model training
+- **Rust** end to end: **Axum** web server, **Leptos** components rendered on the server and hydrated in the browser as **WebAssembly**, and **WebGL2** for the 3D spine
+- **Tailwind CSS 4** design tokens, self-hosted fonts
+- **Claude API** for the language model integration
 - Healthcare standards: **HL7 v2**, **FHIR R4**, **X12 5010**, **ICD-10-CM**, **CPT**, **LOINC**
+- Originally built with Next.js 15, React 19, TypeScript and Python (see the [`typescript-legacy`](https://github.com/mateoscarponi/Meridian-Medical/tree/typescript-legacy) branch)
 
 ## Project structure
 
 ```
-app/            Website, patient portal, privacy page, platform tools and API routes
-components/     Shared interface components, site and platform shells, charts
-lib/            HL7 parser and FHIR mapping, clinical NLP, PHI redaction, claim rules,
-                prior-auth criteria, scheduling model, synthetic data
-ml/             No-show model training script (Python)
+src/main.rs        Local web server
+api/vercel.rs      Vercel Function entry point (same application)
+src/app.rs         HTML shell and page routes
+src/pages/         Website, patient portal, privacy page and the eighteen platform tools
+src/components/    Shared interface components, site and platform shells, charts, 3D spine
+src/domain/        HL7 parser and FHIR mapping, clinical NLP, PHI redaction, claim rules,
+                   prior-auth criteria, scheduling model, synthetic data
+src/server/        API routes, security headers, audit logging
+src/bin/           No-show model training
+public/            Stylesheet, fonts, icon and the prebuilt WebAssembly bundle
+tests/, scripts/   Parity checks against the original version, build and style scripts
 ```
 
 ## Limitations

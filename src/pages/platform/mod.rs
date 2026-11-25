@@ -1,0 +1,19 @@
+//! Care operations platform pages.
+pub mod command_center;
+pub mod impact;
+pub mod prior_auth;
+pub mod eligibility;
+pub mod claims;
+pub mod wc_nofault;
+pub mod scheduling;
+pub mod referrals;
+pub mod messages;
+pub mod agent;
+pub mod scribe;
+pub mod chart_nlp;
+pub mod documents;
+pub mod interop;
+pub mod pipeline;
+pub mod automations;
+pub mod compliance;
+pub mod architecture;

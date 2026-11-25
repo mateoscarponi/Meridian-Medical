@@ -1,0 +1,77 @@
+[package]
+name = "meridian_medical"
+version = "0.1.0"
+edition = "2021"
+description = "Meridian Orthopedics & Spine Care demo, rewritten in Rust (Leptos SSR + WASM hydration, Axum server)."
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+# Local server (http://localhost:3018)
+[[bin]]
+name = "meridian_medical"
+path = "src/main.rs"
+required-features = ["ssr"]
+
+# Vercel Function (Vercel's Rust runtime builds the binaries declared under api/)
+[[bin]]
+name = "vercel"
+path = "api/vercel.rs"
+required-features = ["ssr"]
+
+[dependencies]
+leptos = { version = "0.8" }
+leptos_router = { version = "0.8" }
+leptos_meta = { version = "0.8" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+regex-lite = "0.1"
+wasm-bindgen = "0.2"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = ["Window", "Document", "Element", "HtmlElement", "HtmlCanvasElement", "Storage", "WebGl2RenderingContext", "WebGlProgram", "WebGlShader", "WebGlBuffer", "WebGlUniformLocation", "WebGlVertexArrayObject", "IntersectionObserver", "IntersectionObserverEntry", "IntersectionObserverInit", "MediaQueryList", "DomTokenList", "Navigator", "RequestCache", "HtmlCollection", "PerformanceEntry", "HtmlDivElement", "DomRect", "MouseEvent", "Performance", "AddEventListenerOptions", "EventTarget", "Event", "Location", "History", "ScrollToOptions", "ScrollBehavior", "Request", "RequestInit", "Response", "Headers"] }
+console_error_panic_hook = { version = "0.1", optional = true }
+wasm-bindgen-futures = { version = "0.4", optional = true }
+send_wrapper = "0.6"
+
+leptos_axum = { version = "0.8", optional = true }
+axum = { version = "0.8", optional = true }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time"], optional = true }
+tower = { version = "0.5", optional = true }
+tower-http = { version = "0.6", features = ["fs", "compression-br", "compression-gzip", "set-header"], optional = true }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"], optional = true }
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"], optional = true }
+vercel_runtime = { version = "2.4", features = ["axum"], optional = true }
+
+[features]
+# The server is the default build (that is what Vercel compiles); the browser bundle is built
+# with `--no-default-features --features hydrate` (see scripts/build.sh).
+default = ["ssr"]
+hydrate = ["leptos/hydrate", "dep:console_error_panic_hook", "dep:wasm-bindgen-futures"]
+ssr = ["dep:axum", "dep:tokio", "dep:tower", "dep:tower-http", "dep:leptos_axum", "dep:reqwest", "dep:chrono", "dep:vercel_runtime", "leptos/ssr", "leptos_meta/ssr", "leptos_router/ssr"]
+
+[profile.release]
+opt-level = 3
+# thin LTO: fat LTO of the full site needs >3 GB RAM and crashed rustc on memory-limited machines
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[profile.wasm-release]
+inherits = "release"
+opt-level = "z"
+# keep the target_features section wasm-bindgen reads; names are removed by wasm-bindgen instead
+strip = false
+lto = true
+codegen-units = 1
+panic = "abort"
+
+# Dev/test builds without debug info: on windows-gnu the huge debug sections of the
+# server binary exceed what the MinGW linker can handle ("final link failed: bad value").
+[profile.dev]
+debug = 0
+
+[profile.test]
+debug = 0
+opt-level = 1
