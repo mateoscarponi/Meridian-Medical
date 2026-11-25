@@ -1,21 +1,22 @@
 # Vercel's Rust builder reads `build.target` from this file and fails if there is no [build]
-# table at all, so keep this (empty) section.
+# table at all, so keep this section. Its rustflags are the fallback for any target not
+# matched below, so the server always gets the same type erasure as the WASM bundle.
 [build]
+rustflags = ["--cfg", "erase_components"]
 
 # Use Rust's bundled (self-contained) MinGW linker on Windows GNU. A system MinGW on PATH
 # (e.g. WinLibs) breaks when the user folder contains a space ("C:\Users\Mateo G").
 #
-# `erase_components` type-erases Leptos component views: identical HTML output, but far less
-# monomorphized code (WASM 4.0 MB -> 2.2 MB) and much faster compiles.
+# `erase_components` type-erases Leptos component views (far less
+# monomorphized code: WASM 4.0 MB -> 2.2 MB). It changes the hydration markers, so the server
+# and the WASM bundle must ALWAYS be built with it; src/lib.rs refuses to compile otherwise.
 [target.x86_64-pc-windows-gnu]
 rustflags = ["-C", "link-self-contained=yes", "--cfg", "erase_components"]
 
 [target.wasm32-unknown-unknown]
 rustflags = ["--cfg", "getrandom_backend=\"wasm_js\"", "--cfg", "erase_components"]
 
-# Linux (Vercel's build machines): same type erasure so the deployed server matches local builds.
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["--cfg", "erase_components"]
-
-[target.aarch64-unknown-linux-gnu]
+# Linux (Vercel's build machines, whatever triple the builder passes: gnu or musl): same type
+# erasure so the server's HTML hydration markers match the WASM bundle exactly.
+[target.'cfg(target_os = "linux")']
 rustflags = ["--cfg", "erase_components"]
