@@ -6,3 +6,4 @@
 
 # Keep generated/build output out of GitHub language stats.
 public/pkg/** linguist-generated
+docs/** linguist-documentation
